@@ -12,8 +12,8 @@ st.set_page_config(page_title="Jarvis AI", layout="centered")
 
 
 # ✅ Check API key early (prevents blank screen)
-import os
-api_key = os.getenv("GROQ_API_KEY")
+
+api_key = st.secrets["GROQ_API_KEY"]
 if not api_key:
     st.error("❌ GROQ_API_KEY not found. Add it to your .env file.")
     st.stop()
